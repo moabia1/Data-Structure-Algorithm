@@ -31,3 +31,21 @@ let levelOrder = (root) => {
   return ans
 }
 
+
+
+// Ques: 3 Symmetric Tree (Leetcode:-101)
+
+let solve = (l, r) => {
+  if (l == null && r == null) return true;
+  if (l != null && r == null || l == null && r != null) return false
+  if (l.vav == r.val) {
+    let left = solve(l.left, r.right);
+    let right = solve(l.right, r.left);
+    return left && right
+  }
+  return false
+}
+let symmetric = (root) => {
+  if (root == null) return true
+  return solve(root.left, root.right);
+}
