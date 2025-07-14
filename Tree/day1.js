@@ -10,7 +10,7 @@ class Node{
 
 class Tree{
   buildTree() {
-    let data = prompt("enter number")
+    let data = prompt("enter value")
     if (data == -1) return null;
     let root = new Node(data)
     console.log("Enter left data of "+ root.val)
