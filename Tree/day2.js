@@ -38,7 +38,7 @@ let levelOrder = (root) => {
 let solve = (l, r) => {
   if (l == null && r == null) return true;
   if (l != null && r == null || l == null && r != null) return false
-  if (l.vav == r.val) {
+  if (l.val == r.val) {
     let left = solve(l.left, r.right);
     let right = solve(l.right, r.left);
     return left && right
@@ -49,3 +49,4 @@ let symmetric = (root) => {
   if (root == null) return true
   return solve(root.left, root.right);
 }
+
