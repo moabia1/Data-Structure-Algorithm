@@ -64,3 +64,20 @@ function pathSum(root, target) {
   if (root == null) return false
   return solve(root, target);
 }
+
+
+
+// Ques:5 Invert Binary Tree (Leetcode:- 226)
+function solve(root) {
+  if (root == null) return
+  solve(root.left)
+  solve(root.right)
+  let temp = root.left
+  root.left = root.right
+  root.right = temp;
+}
+function invertTree(root) {
+  if (root == null) return null
+  solve(root)
+  return root
+}
