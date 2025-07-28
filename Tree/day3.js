@@ -27,3 +27,20 @@ function leftView(root) {
   if (root == null) return ans;
   return solve(root,0,ans)
 }
+
+
+
+// Ques:3 Right view of Binary Tree (Leetcode:- 199)
+function solve(root,level,ans) {
+  if (root == null) return
+  if(level == ans.length) ans.push(root.val)
+  solve(root.right, level + 1, ans)
+  solve(root.left, level + 1, ans)
+  return ans;
+}
+function rightView(root) {
+  let ans = []
+  if(root == null) return ans
+  return solve(root,0,ans)
+}
+
